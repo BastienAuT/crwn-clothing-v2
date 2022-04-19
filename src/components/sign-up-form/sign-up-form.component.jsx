@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
 import Button from '../button/button.component';
+import SignInForm from "../sign-in-form/sign-in-form.component";
 
 import { createAuthUserwithEmailAndPassword, createUserDocumentFromAuth  } from "../../utils/firebase/firebase.utils";
 
@@ -88,7 +89,7 @@ const SignUpForm = () => {
         />
 
          <FormInput
-          label="confirm Password"
+          label="Confirm Password"
           type="password"
           required
           onChange={handleChange}
