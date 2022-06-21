@@ -8,7 +8,6 @@ import {
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 import PaymentForm from "../../components/payment-form/payment-form.component";
 
-
 import {
   CheckoutContainer,
   CheckoutHeader,
@@ -17,17 +16,15 @@ import {
 } from "./checkout.styles";
 
 const Checkout = () => {
-  // const { cartItems, cartTotal } = useContext(CartContext);
-
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
   return (
     <CheckoutContainer>
       <CheckoutHeader>
-        <div>
+        <HeaderBlock>
           <span>Product</span>
-        </div>
+        </HeaderBlock>
         <HeaderBlock>
           <span>Description</span>
         </HeaderBlock>
@@ -44,7 +41,8 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total as="span">Total: {cartTotal}$ </Total>
+      <Total>Total: ${cartTotal}</Total>
+
       <PaymentForm />
     </CheckoutContainer>
   );
